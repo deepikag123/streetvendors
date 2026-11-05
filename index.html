@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101b17">
+  <title>OoruBites — Discover your neighbourhood's food</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="announcement">GOOD FOOD IS CLOSER THAN YOU THINK <span>✦</span> SUPPORT YOUR LOCAL VENDORS</div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="OoruBites home"><span class="brand-mark">O</span><span>ooru<span class="brand-accent">bites</span><small>THE LOCAL FOOD MAP</small></span></a>
+    <nav class="desktop-nav"><a href="#discover">Discover</a><a href="#how">How it works</a><a href="#vendor-cta">For vendors</a></nav>
+    <div class="header-actions"><button class="location-pill" id="locationBtn">⌖ <span id="locationLabel">Choose area</span></button><button class="btn btn-dark" id="authOpen">Sign in</button><button class="avatar hidden" id="accountBtn" aria-label="Account">U</button></div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse"></span> CHENNAI, ONE STREET AT A TIME</div>
+        <h1>Find the flavour<br>of <em>your</em> streets.</h1>
+        <p>From the tiny dosa cart around the corner to the bajji kadai everyone in the neighbourhood loves. Discover the local spots worth knowing.</p>
+        <div class="hero-search">
+          <span>⌕</span><input id="searchInput" placeholder="Search dosa, parotta, shop name..." aria-label="Search food or shop">
+          <button id="searchBtn" class="btn btn-orange">Explore</button>
+        </div>
+        <div class="hero-meta"><span>✦ Local favourites</span><span>✦ Real neighbourhoods</span><span>✦ Vendor-first</span></div>
+      </div>
+      <div class="hero-art">
+        <img src="https://images.unsplash.com/photo-1630383249896-424e482df921?auto=format&fit=crop&w=1000&q=85" alt="South Indian dosa served with chutney">
+        <div class="floating-note"><span class="note-icon">✳</span><div><b>Small shops. Big stories.</b><small>Every local favourite has a story.</small></div></div>
+        <div class="hero-stamp">MADE<br>LOCAL<br>♡</div>
+      </div>
+      <div class="hero-bottom"><span>SCROLL TO DISCOVER</span><span>↓</span><span>01 / 04</span></div>
+    </section>
+
+    <section class="area-strip">
+      <div><span class="eyebrow dark-eyebrow">START CLOSE TO HOME</span><h2>What's cooking <em>near you?</em></h2></div>
+      <div class="area-chips" id="areaChips"></div>
+    </section>
+
+    <section class="discover section-wrap" id="discover">
+      <div class="customer-welcome hidden" id="customerWelcome"><div><b id="customerWelcomeTitle">Welcome to OoruBites!</b><span>Choose your area to find nearby street-food shops.</span></div><button class="btn btn-outline" id="changeAreaBtn">Change area</button></div>
+      <div class="section-heading">
+        <div><span class="eyebrow dark-eyebrow">THE NEIGHBOURHOOD EDIT</span><h2>Local gems, <em>served fresh.</em></h2><p id="resultsSub">A handpicked starting list of Chennai street-food spots.</p><div class="area-count" id="areaCount">Explore local shops</div></div>
+        <div class="filters"><select id="categoryFilter" aria-label="Filter by food type"><option value="All">All food</option><option>South Indian</option><option>Snacks</option><option>Burmese</option><option>Street food</option></select><select id="sortFilter" aria-label="Sort shops"><option value="featured">Featured</option><option value="rating">Top rated</option><option value="name">Name A–Z</option></select></div>
+      </div>
+      <div class="shop-grid" id="shopGrid"></div>
+      <div class="empty-state hidden" id="emptyState"><div>⌕</div><h3>No local spots found yet</h3><p>Try another area or search term. Vendors can add their shop to OoruBites.</p><button class="btn btn-dark" id="emptyVendorBtn">Add a shop</button></div>
+    </section>
+
+    <section class="story-band" id="how">
+      <div class="story-image"><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1000&q=85" alt="Street food being prepared"></div>
+      <div class="story-copy"><span class="eyebrow">MORE THAN A FOOD LIST</span><h2>Every kadai<br>deserves its <em>crowd.</em></h2><p>Local vendors build the flavour of a place. OoruBites helps people find them, learn what they serve and share their experience — without asking a small shop to become a big restaurant.</p><div class="story-stats"><div><b>01</b><span>Discover nearby</span></div><div><b>02</b><span>Meet local vendors</span></div><div><b>03</b><span>Share your rating</span></div></div></div>
+    </section>
+
+    <section class="vendor-cta section-wrap" id="vendor-cta"><div><span class="eyebrow dark-eyebrow">FOR THE PEOPLE BEHIND THE TAWA</span><h2>Your shop has fans.<br>Let <em>more people</em> find you.</h2><p>Create a free shop profile, add your menu and share your location with nearby customers.</p><button class="btn btn-orange" id="vendorJoin">List your shop <span>↗</span></button></div><div class="vendor-illustration"><div class="sun"></div><div class="cart"><div class="cart-roof"></div><div class="cart-sign">உணவு</div><div class="cart-counter"><span>● ● ●</span></div><div class="cart-wheel"></div><div class="cart-wheel second"></div></div><span class="illustration-caption">LOCAL FOOD. LOCAL PRIDE.</span></div></section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="#"><span class="brand-mark">O</span><span>ooru<span class="brand-accent">bites</span><small>THE LOCAL FOOD MAP</small></span></a><p>Made for the streets that make a city.</p><span>© 2026 OoruBites · Chennai demo</span></footer>
+
+  <div class="modal-backdrop hidden" id="authModal"><div class="modal"><button class="modal-close" data-close="authModal">×</button><span class="eyebrow dark-eyebrow">WELCOME TO OORUBITES</span><h2 id="authTitle">Find your next<br><em>local favourite.</em></h2><div class="role-choice-grid">
+      <button type="button" class="role-choice active" data-role="customer"><span class="role-choice-icon">⌕</span><b>I'm a customer</b><small>Find nearby shops, explore menus and rate food</small></button>
+      <button type="button" class="role-choice" data-role="vendor"><span class="role-choice-icon">♨</span><b>I'm a vendor</b><small>Register your shop, upload photos and manage menu</small></button>
+    </div>
+    <div class="demo-credentials" id="demoCredentials">
+      <b>Try the demo account</b>
+      <div><span>Customer</span><code>customer@oorubites.in</code><code>Ooru@123</code><button type="button" data-demo="customer">Use</button></div>
+      <div><span>Vendor</span><code>vendor@oorubites.in</code><code>Vendor@123</code><button type="button" data-demo="vendor">Use</button></div>
+    </div>
+    <div class="auth-mode"><button type="button" id="signInMode" class="active">Sign in</button><button type="button" id="signUpMode">Create account</button></div>
+    <form id="authForm"><label id="authNameWrap">Your name<input id="authName" placeholder="Enter your name"></label><label>Email address<input id="authEmail" type="email" required placeholder="you@example.com"></label><label>Password<input id="authPassword" type="password" minlength="4" required placeholder="Enter your password"></label><button class="btn btn-dark full" type="submit">Continue <span>→</span></button></form><p class="fine-print">Demo sign-in only. Your profile is stored in this browser, not on a secure server.</p></div></div>
+
+  <div class="modal-backdrop hidden" id="locationModal"><div class="modal"><button class="modal-close" data-close="locationModal">×</button><span class="eyebrow dark-eyebrow">PICK YOUR PATCH</span><h2>Where are you<br><em>hunting today?</em></h2><p class="modal-intro">Choose an area in Chennai. You can also try your device location.</p><button class="btn btn-outline full" id="detectLocation">⌖ Detect my location</button><label class="area-label">City / region<select id="citySelect"><option>Chennai</option><option>Coimbatore (coming soon)</option><option>Madurai (coming soon)</option><option>Salem (coming soon)</option><option>Dharmapuri (coming soon)</option></select></label><label class="area-label">Neighbourhood<select id="areaSelect"></select></label><button class="btn btn-orange full" id="saveLocation">Show food near me →</button><p class="fine-print" id="geoMessage">Location access is optional. You can choose an area manually.</p></div></div>
+
+  <div class="modal-backdrop hidden" id="shopModal"><div class="modal modal-wide"><button class="modal-close" data-close="shopModal">×</button><div id="shopDetail"></div></div></div>
+  <div class="modal-backdrop hidden" id="vendorModal"><div class="modal modal-wide"><button class="modal-close" data-close="vendorModal">×</button><span class="eyebrow dark-eyebrow">VENDOR STUDIO</span><h2 id="vendorFormTitle">Put your shop<br><em>on the map.</em></h2><form id="vendorForm" class="vendor-form"><input type="hidden" id="editShopId"><div class="form-grid"><label>Shop name<input id="vName" required placeholder="e.g. Murugan Thallu Vandi"></label><label>Food category<select id="vCategory"><option>South Indian</option><option>Snacks</option><option>Burmese</option><option>Street food</option></select></label><label>Area<select id="vArea"></select></label><label>Street / shop address<input id="vAddress" required placeholder="Door number, street name"></label><label>Landmark (optional)<input id="vLandmark" placeholder="Near bus stop, temple, school..."></label><label>Opening time<input id="vHours" placeholder="e.g. 5:00 PM – 10:30 PM"></label><label>Contact number<input id="vPhone" placeholder="Optional"></label><label>Default parcel charge (₹)<input id="vParcel" type="number" min="0" step="1" value="0" placeholder="0"></label></div><label>Shop photo URL<input id="vImage" placeholder="Paste an image URL (optional)"></label><label>Or upload a shop photo<input id="vUpload" type="file" accept="image/*"></label><p class="fine-print photo-help">Add a clear photo of your actual stall or food. Demo food photos are shown for sample listings.</p><div class="menu-editor"><div class="menu-editor-head"><b>Food items, prices & parcel charges</b><button type="button" class="text-button" id="addMenuItem">+ Add item</button></div><div id="menuRows"></div></div><button class="btn btn-orange full" type="submit">Save shop profile →</button></form><p class="fine-print">This frontend demo saves shop data in this browser only. Uploaded photos are stored locally and may use browser storage space.</p></div></div>
+
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
